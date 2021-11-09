@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz de Matemática</title>
+    <link rel="stylesheet" type="text/css" href="./css/mathematics.css" />
+  </head>
+  <body>
+    <h1>Quiz de Matemática</h1>
+
+    <div id='initial-input'>
+      <a>Número de preguntas que desea contestar</a>
+      <br />
+      <input id="question-quantity" type="number" placeholder="5-20">
+      <button onclick="generateQuiz()">¡Iniciar!</button>
+      <a id="denied"> Solo puede ser entre 5 y 20 preguntas </a>
+    </div>
+
+    <ul id="quiz"></ul>
+
+    <div>
+      <button onclick="showAnswers()">Ver las respuestas</button> 
+      <button onclick="checkAnswers()">Revisar mis respuestas</button> 
+    </div>
+
+    <script src="./js/mathematics.js"></script>
+  </body>
+</html>
