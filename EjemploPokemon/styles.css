@@ -1,7 +1,7 @@
 #card {
-    margin-left: 100px;
-    margin-right: 1050px;
-    height: 268px;
+    margin: auto;
+    height: 88%;
+    width: 15%;
     border: 5px solid gold;
     display: none;
     background-color: grey;
@@ -9,27 +9,24 @@
 }
 
 #pokemon-img {
-    margin-left: 30px;
-    margin-right: 30px;
+    text-align: center;
     border: 3px solid gold;
+    margin: 0 10% 0 10%;
 }
 
 #pokemon-name {
-    margin-top: 10px;
+    text-align: center;
 }
 
 img {
     margin-left: 15px;
+    margin: auto;
 }
 
 body{
     background: url(pokeball.png) repeat fixed;
 }
 
-#pokemon-name {
-    margin-left: 55px;
-}
-
 #pokemon-abilities {
-    padding-left: 20px;
+    padding-left: 10%;
 }
