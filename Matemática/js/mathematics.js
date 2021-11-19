@@ -14,7 +14,24 @@ const questionAnswer = { 0: {question: "(8+4-2)*2=", answer: 20},
                          1: {question: "4*2/2=", answer: 4},
                          2: {question: "(5*5)+(2/2)=", answer: 26},
                          3: {question: "(3*2)(5-2)(9-5)=", answer: 72},
-                         4: {question: "(6-6)(4/2)(5--100)=", answer: 0}
+                         4: {question: "(6-6)(4/2)(5--100)=", answer: 0},
+                         5: {question: "(4+4)(4-2)=", answer: 16},
+                         6: {question: "(5+5)(5-4)=", answer: 10},
+                         7: {question: "(6/6)(4/4)(3/3)=", answer: 1},
+                         8: {question: "(4+5)(5+4)=", answer: 81},
+                         9: {question: "(4/2)(9/3)=", answer: 6},
+                         10: {question: "(6+5)(5+5)=", answer: 110},
+                         11: {question: "(6-5)(4*4)=", answer: 16},
+                         12: {question: "(-6-6)(10)=", answer: -120},
+                         13: {question: "(4*2)(5+100)=", answer: 840},
+                         14: {question: "(6+5)(5+5)=", answer: 275},
+                         15: {question: "(42)(40+2)=", answer: 1764},
+                         16: {question: "(5+5)(4+4)=", answer: 80},
+                         17: {question: "(4-2)(4-2)=", answer: 4},
+                         18: {question: "(4+5)(5+5)(5-100)=", answer: -8550},
+                         19: {question: "(6-5)(4-2)=", answer: 2},
+                         20: {question: "(4-2)(100+1)=", answer: 202},
+                         21: {question: "(5+1)(4-2)(3+3)=", answer: 72},
                        };
 
 function generateQuiz(){
@@ -88,8 +105,8 @@ function checkAnswers(){
         }
         const quizCheck = document.getElementById(CHECK_BUTTONS_TAG);
         quizCheck.style.display = "none";
-        //const quizStartAgain = document.getElementById(START_AGAIN_TAG);
-        //quizStartAgain.style.display += "block";
+        const quizStartAgain = document.getElementById(START_AGAIN_TAG);
+        quizStartAgain.style.display += "block";
     }
 }
 
