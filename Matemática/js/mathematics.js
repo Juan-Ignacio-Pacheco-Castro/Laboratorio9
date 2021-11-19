@@ -6,7 +6,9 @@ const INITIAL_INPUT = 'initial-input';
 const INPUT_TAG = 'input';
 const TEXT_TAG = 'a';
 const LIST_TAG = 'li';
+const CHECK_BUTTONS_TAG = 'quiz-check';
 const AMOUNT_ALL_QUESTIONS = 5;
+const START_AGAIN_TAG = 'start-again';
 
 const questionAnswer = { 0: {question: "(8+4-2)*2=", answer: 20}, 
                          1: {question: "4*2/2=", answer: 4},
@@ -29,6 +31,7 @@ function generateQuiz(){
             const questionAsked = document.createElement(TEXT_TAG);
             const questionInput = document.createElement(INPUT_TAG);
             questionInput.type = "number";
+            questionInput.classList = "answer";
             for (let i = 0; i < questionsQuantity; ++i){
                 let questionID = getRandomInt(AMOUNT_ALL_QUESTIONS);
                 questionAsked.innerHTML = questionAnswer[questionID].question;
@@ -37,6 +40,8 @@ function generateQuiz(){
             questionElement.appendChild(questionAsked);
             questionElement.appendChild(questionInput);
             questions.appendChild(questionElement);
+            const quizCheck = document.getElementById(CHECK_BUTTONS_TAG);
+            quizCheck.style.display = "block";
         }
     } else {
         deniedDisplay = "display: block;";
@@ -50,8 +55,17 @@ function showAnswers(){
     if (selection){
         const questions = document.getElementById(QUESTION_LIST).children;
         for (let counter = 0; counter < questions.length; ++counter){
-            questions[counter].lastChild.value = questionAnswer[questions[counter].firstChild.id].answer;
+            //questions[counter].lastChild.value = questionAnswer[questions[counter].firstChild.id].answer;
+            questions[counter].lastChild.style.display = "none";
+            const questionTextAnswer = document.createElement(TEXT_TAG);
+            questionTextAnswer.innerHTML = questionAnswer[questions[counter].firstChild.id].answer;
+            questionTextAnswer.classList = "text-answer";
+            questions[counter].appendChild(questionTextAnswer);
         }
+        const quizCheck = document.getElementById(CHECK_BUTTONS_TAG);
+        quizCheck.style.display = "none";
+        const quizStartAgain = document.getElementById(START_AGAIN_TAG);
+        quizStartAgain.style.display = "block";
     }
 }
 
@@ -62,16 +76,20 @@ function checkAnswers(){
         for (let counter = 0; counter < questions.length; ++counter){
             const revision = document.createElement(TEXT_TAG);
             if (questions[counter].lastChild.value == questionAnswer[questions[counter].firstChild.id].answer){
-                console.log("correcto");
                 revision.innerHTML = "¡Correcto!";
-                //revision.classList = "correct";
+                revision.classList = "correct-answer";
+                questions[counter].lastChild.style = "box-shadow: 0 0 3px #4BB543;";
             } else {
-                console.log("incorrecto");
-                revision.innerHTML = "Equivocado";
-                //revision.classList = "incorrect";
+                revision.innerHTML = "Equivocado. Respuesta correcta: " + questionAnswer[questions[counter].firstChild.id].answer;
+                revision.classList = "wrong-answer";
+                questions[counter].lastChild.style = "box-shadow: 0 0 3px #cd4b3c;";
             }
             questions[counter].appendChild(revision);
         }
+        const quizCheck = document.getElementById(CHECK_BUTTONS_TAG);
+        quizCheck.style.display = "none";
+        //const quizStartAgain = document.getElementById(START_AGAIN_TAG);
+        //quizStartAgain.style.display += "block";
     }
 }
 
@@ -83,9 +101,8 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-const clear = section => section.innerHTML='';
+function startAgain(){
+    location.reload();
+}
 
-// const questionsToBeAnswered = document.getElementById(INITIAL_INPUT);
-//     questionsToBeAnswered.style = "display: block;";
-//     const questions = document.getElementById(QUESTION_LIST);
-//     clear(questions);
+const clear = section => section.innerHTML='';

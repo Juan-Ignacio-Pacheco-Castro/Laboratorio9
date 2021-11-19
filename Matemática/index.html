@@ -7,22 +7,24 @@
   </head>
   <body>
     <h1>Quiz de Matemática</h1>
-
+    <hr />
     <div id='initial-input'>
-      <a>Número de preguntas que desea contestar</a>
-      <br />
+      <a id="question-quantity-declaration">Número de preguntas que desea contestar</a>
+      <br /><br />
       <input id="question-quantity" type="number" placeholder="5-20">
       <button onclick="generateQuiz()">¡Iniciar!</button>
       <a id="denied"> Solo puede ser entre 5 y 20 preguntas </a>
     </div>
 
-    <ul id="quiz"></ul>
+    <ol id="quiz"></ol>
 
-    <div>
-      <button onclick="showAnswers()">Ver las respuestas</button> 
-      <button onclick="checkAnswers()">Revisar mis respuestas</button> 
+    <div id="quiz-check">
+      <button id="check-answer-button" onclick="checkAnswers()">Revisar mis respuestas</button> 
+      <button id="show-answer-button" onclick="showAnswers()">Ver las respuestas</button> 
     </div>
-
+    <div>
+      <button id="start-again" onclick="startAgain()">Volver iniciar</button>
+    </div>
     <script src="./js/mathematics.js"></script>
   </body>
 </html>

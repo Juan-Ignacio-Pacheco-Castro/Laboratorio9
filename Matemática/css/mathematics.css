@@ -2,3 +2,134 @@
     color: red;
     display: none;
 }
+
+hr {
+    color: #55a5d2;
+    background-color: #55a5d2;
+    height: 2px;
+}
+
+h1 {
+    stroke: black;
+    font-size: 48px;
+    text-align: center;
+}
+
+#question-quantity-declaration {
+    font-size: 24px;
+    margin: 5% auto;
+}
+
+div {
+    text-align: center;
+}
+
+#initial-input{
+    margin: 2% auto;
+}
+
+#quiz-check {
+    display: none;
+}
+
+ol {
+    text-align: center justify;
+    margin-left: 33%;
+    font-size: 20px;
+    list-style: none; 
+    counter-reset: li;
+}
+
+li {
+    counter-increment: li;
+    margin: 1%;
+    /*content: counter(li); color: darkblue; background-color: skyblue;*/
+}
+
+ol li::before {
+    content: counter(li); 
+    color: #4e7c9c;
+    display: inline-block; 
+    width: 1.5em;
+    height: 1.5em; 
+    margin-left: -1.5em;
+    margin-right: 1em;
+    text-align: center;
+    direction: rtl;
+    background-color: #CAE3F1;
+    border-radius: 50%;
+}
+
+.answer {
+    appearance: textfield;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.text-answer {
+    color: #4BB543;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+#show-answer-button {
+    background-color: white;
+    border-color: #55a5d2;
+    color: #55a5d2;
+    height: 3rem;
+    width: 16rem;
+    font-size: 20px;
+}
+
+#show-answer-button:hover {
+    background-color: #55a5d2;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+
+#check-answer-button {
+    background-color: #55a5d2;
+    border-color: #55a5d2;
+    color: white;
+    height: 3rem;
+    width: 16rem;
+    font-size: 20px;
+}
+
+#check-answer-button:hover {
+    background-color: #4e7c9c;
+    cursor: pointer;
+}
+
+button {
+    background-color: white;
+    border-color: #55a5d2;
+    color: #55a5d2;
+    height: 1.5rem;
+    width: 8rem;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #55a5d2;
+    border-color: white;
+    color: white;
+    cursor: pointer;
+}
+
+.correct-answer {
+    color: #4BB543;
+}
+
+.wrong-answer {
+    color: #cd4b3c;
+}
+
+#start-again {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
